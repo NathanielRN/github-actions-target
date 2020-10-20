@@ -1,0 +1,19 @@
+name: My Target workflow
+
+on:
+  push:
+  pull_request:
+  check_run:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: 'Person to ignore'
+        required: true
+        default: 'Mona the Octocat'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Hi
+        run: echo Hello!
